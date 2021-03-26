@@ -86,6 +86,8 @@ message "-----> Dart cmd found at $DART_BIN"
 CAN_DART_RUN=`/app/dart-sdk/bin/dart --version`
 message "-----> Dart reports version: $CAN_DART_RUN"
 
+cd $BUILD_DIR
+
 if [ ! -d "./aqueduct" ]; then 
   git clone https://github.com/NayanJD/aqueduct
 fi 
@@ -97,9 +99,6 @@ git checkout fix-db-upgrade-ssl
 /app/dart-sdk/bin/pub global activate --source path ./aqueduct
 
 cd ..
-
-
-cd $BUILD_DIR
 
 for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cache`; do
     pub_dir=`dirname $filename`
