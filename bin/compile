@@ -88,6 +88,15 @@ message "-----> Dart reports version: $CAN_DART_RUN"
 
 git clone https://github.com/NayanJD/aqueduct
 
+cd aqueduct 
+
+git checkout fix-db-upgrade-ssl
+
+pub global activate --source path ./aqueduct
+
+cd ..
+
+
 cd $BUILD_DIR
 
 for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cache`; do
