@@ -86,7 +86,9 @@ message "-----> Dart cmd found at $DART_BIN"
 CAN_DART_RUN=`/app/dart-sdk/bin/dart --version`
 message "-----> Dart reports version: $CAN_DART_RUN"
 
-git clone https://github.com/NayanJD/aqueduct
+if [ ! -d "./aqueduct"]; then 
+  git clone https://github.com/NayanJD/aqueduct
+fi 
 
 cd aqueduct 
 
