@@ -92,7 +92,7 @@ cd aqueduct
 
 git checkout fix-db-upgrade-ssl
 
-pub global activate --source path ./aqueduct
+/app/dart-sdk/bin/pub global activate --source path ./aqueduct
 
 cd ..
 
